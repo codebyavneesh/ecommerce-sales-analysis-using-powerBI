@@ -1,23 +1,71 @@
 # 🛒 E-Commerce Sales Analysis
 
-A data analysis project focused on uncovering **sales trends and revenue patterns** in e-commerce data using Python, SQL, and Jupyter Notebook.
+<div align="center">
+
+![Dashboard Preview](ecommerce-sales-analysis/ecommerce-sales-dashboard.png)
+
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+
+**A complete end-to-end E-Commerce Sales Analysis using Python & MySQL**
+
+</div>
 
 ---
 
-## 📁 Project Structure
+## 📌 Project Overview
+
+This project performs a **comprehensive analysis of e-commerce sales data** using Python and MySQL. It covers everything from data extraction and cleaning to advanced visualizations and business insights — helping understand customer behavior, product performance, and revenue trends.
+
+---
+
+## 🗂️ Project Structure
 
 ```
-ecommerce-sales-analysis/
+ecommerce-sales-analysis-using-powerBI/
 │
-├── ecommerce_sales_analysis.ipynb   # Main analysis notebook
-├── dataset/                         # Raw source data (CSV files)
-│   ├── customers.csv                # Customer details (id, name, city, etc.)
-│   ├── orders.csv                   # Order records (id, product, quantity, price, date)
-│   └── products.csv                 # Product catalogue (id, name, category, price)
-├── exports/                         # Exported charts and result files
-├── screenshots/                     # Visualizations and chart snapshots
-└── README.md
+└── ecommerce-sales-analysis/
+    ├── 📁 datasets/
+    │   ├── categories_large.csv
+    │   ├── customers_large.csv
+    │   ├── order_items_large.csv
+    │   ├── orders_large.csv
+    │   ├── products_large.csv
+    │   └── returns_large.csv
+    │
+    ├── 📁 screenshots/
+    │   └── (Dashboard & analysis screenshots)
+    │
+    ├── 📓 ecommerce-sales-analysis.ipynb
+    └── 🖼️ ecommerce-sales-dashboard.png
 ```
+
+---
+
+## 📊 Datasets Used
+
+| File | Description |
+|------|-------------|
+| `customers_large.csv` | Customer details and demographics |
+| `orders_large.csv` | Order history with dates and status |
+| `order_items_large.csv` | Individual items per order |
+| `products_large.csv` | Product catalog with pricing |
+| `categories_large.csv` | Product category mapping |
+| `returns_large.csv` | Return records and reasons |
+
+---
+
+## 🔍 Key Analysis Performed
+
+- 📈 **Revenue Trends** — Monthly and yearly sales performance
+- 👥 **Customer Segmentation** — Top customers by revenue
+- 🏆 **Top Performing Products** — Best-selling items and categories
+- 🔄 **Return Analysis** — Return rates and patterns
+- 🌍 **Regional Sales** — Geographic distribution of orders
+- 📦 **Order Status Breakdown** — Delivered, pending, returned
+- 💰 **Profit & Loss Insights** — Margin analysis per category
 
 ---
 
@@ -25,112 +73,77 @@ ecommerce-sales-analysis/
 
 | Tool | Purpose |
 |------|---------|
-| **Python** | Data processing & analysis |
-| **SQL** | Data querying & transformation |
-| **Jupyter Notebook** | Interactive analysis environment |
-| **Pandas** | Data manipulation |
+| **Python 3.8+** | Core programming language |
+| **MySQL 8.0+** | Database for data storage & querying |
+| **Pandas** | Data manipulation and analysis |
 | **Matplotlib / Seaborn** | Data visualization |
-
----
-
-## 📊 Project Overview
-
-This project analyzes e-commerce sales data to identify key revenue trends, seasonal patterns, and business performance metrics using SQL queries inside Python, with results visualized through Matplotlib charts.
-
-**💵 Total Company Revenue: ₹5,37,510.00**
-
----
-
-## 🗃️ Dataset
-
-All source data is stored in the [`dataset/`](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/tree/main/ecommerce-sales-analysis/datasets) folder. Three CSV files are used:
-
-| File | Description | Columns |
-|------|-------------|---------|
-| `customers.csv` | Customer master data | `customer_id`, `customer_name`, `city`, `email`, `signup_date` |
-| `orders.csv` | All order transactions | `order_id`, `customer_id`, `product_id`, `quantity`, `payment_method`, `order_date` |
-| `products.csv` | Product catalogue | `product_id`, `product_name`, `category`, `price` |
-
-> These three tables are loaded into SQL (via Python) and joined together to perform all the analysis below.
-
----
-
-## 📈 Key Analysis & Outputs
-
-### 1. 🏆 Top 10 Highest Selling Products
-> Which products have the highest total quantity sold?
-
-SQL fetches product-wise total quantity from orders, grouped and sorted descending — displayed as a **bar chart**.
-
-![Top 10 Highest Selling Products](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/blob/main/ecommerce-sales-analysis/screenshots/top_10_highest_selling_product.png)
-
----
-
-### 2. 💰 Top 10 Highest Spenders
-> Who are the customers spending the most overall?
-
-Customer-level revenue aggregation using SQL JOIN across orders, products, and customers tables — visualized as a **bar chart**.
-
-![Top 10 Highest Spenders](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/blob/main/ecommerce-sales-analysis/screenshots/top_10_highest_spender.png)
-
----
-
-### 3. 🧾 Top 10 Average Spenders
-> Which customers have the highest average order value?
-
-Average spend per customer calculated via SQL — highlights premium/high-value buyers — shown as a **bar chart**.
-
-![Top 10 Average Spenders](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/blob/main/ecommerce-sales-analysis/screenshots/top_10_average_spender.png)
-
----
-
-### 4. 🏙️ Revenue of Each City
-> Which cities contribute the most to total revenue?
-
-City-wise revenue breakdown using SQL `GROUP BY` on customer location joined with order data — plotted as a **bar chart**.
-
-![Revenue of Each City](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/blob/main/ecommerce-sales-analysis/screenshots/revenue_of_each_city.png)
-
----
-
-### 5. 📅 Monthly Trend Analysis
-> How does revenue change month over month?
-
-Time-series analysis using SQL date functions to extract monthly revenue — displayed as a **trend chart** to spot peak and slow seasons.
-
-![Monthly Trend Analysis](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/blob/main/ecommerce-sales-analysis/screenshots/monthly_trend_analysis.png)
+| **Jupyter Notebook** | Interactive analysis environment |
 
 ---
 
 ## 🚀 How to Run
 
+### Prerequisites
+```bash
+pip install pandas matplotlib seaborn mysql-connector-python jupyter
+```
+
+### Steps
+
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/ecommerce-sales-analysis.git
-   cd ecommerce-sales-analysis
-   ```
+```bash
+git clone https://github.com/codebyavneesh/ecommerce-sales-analysis-using-powerBI.git
+cd ecommerce-sales-analysis-using-powerBI
+```
 
-2. **Install dependencies**
-   ```bash
-   pip install pandas matplotlib seaborn jupyter
-   ```
+2. **Setup MySQL Database**
+```sql
+CREATE DATABASE ecommerce_db;
+```
 
-3. **Launch Jupyter Notebook**
-   ```bash
-   jupyter notebook ecommerce_sales_analysis.ipynb
-   ```
+3. **Open Jupyter Notebook**
+```bash
+jupyter notebook ecommerce-sales-analysis/ecommerce-sales-analysis.ipynb
+```
 
-4. Run all cells from top to bottom.
-
----
-
-## 📤 Exports
-
-Processed chart files and CSVs are saved in the [`exports/`](https://github.com/codebyavneesh/ecommerce-sales-analysis-using-python-mysql/tree/main/ecommerce-sales-analysis/exports) folder for easy sharing and reference.
+4. **Run all cells** and explore the analysis!
 
 ---
 
-## 👤 Author
+## 📸 Screenshots
 
-**Your Name**
-- GitHub: [@codebyavneesh](https://github.com/codebyavneesh)
+> Check the `screenshots/` folder for full dashboard and analysis visuals.
+
+---
+
+## 🤝 Connect with Me
+
+<div align="center">
+
+| Platform | Link |
+|----------|------|
+| 💼 **LinkedIn** | [linkedin.com/in/codebyavneesh](https://linkedin.com/in/codebyavneesh) |
+| 📧 **Email** | [avneesh.codes@gmail.com](mailto:avneesh.codes@gmail.com) |
+| 🐙 **GitHub** | [github.com/codebyavneesh](https://github.com/codebyavneesh) |
+
+</div>
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+**codebyavneesh**
+
+*Data Analyst | Python Developer | MySQL Enthusiast*
+
+⭐ **Agar yeh project helpful laga toh repo ko Star zaroor karein!** ⭐
+
+</div>
+
+---
+
+<div align="center">
+<sub>Made with ❤️ by <a href="https://linkedin.com/in/codebyavneesh">codebyavneesh</a></sub>
+</div>
